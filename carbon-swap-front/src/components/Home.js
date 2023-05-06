@@ -2,8 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from "./Header";
 import bkg from '../images/background_v1.jpeg';
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+    const history = useNavigate();
 
     return (
         <HomeStyle>
@@ -14,18 +17,18 @@ export default function Home() {
             </TopHomeStyle>
             <BottomHomeStyle>
                 <BottomLStyle>
-                    <NumDataStyle>
-                        <NumBoxStyle>Empresa</NumBoxStyle>
+                    <CardStyle>
+                        <TextCardStyle>Empresa</TextCardStyle>
                         <TextBoxStyle>Aqui você vai fazer pipipi popopo</TextBoxStyle>
-                        <OvalButton>Pipipi popopo</OvalButton>
-                    </NumDataStyle>
-                </BottomLStyle>
+                        <OvalButton onClick={() => history("/send")}>Pipipi popopo</OvalButton>
+                    </CardStyle>
+                </BottomLStyle> 
                 <BottomRStyle>
-                    <NumDataStyle>
-                        <NumBoxStyle>Comprador</NumBoxStyle>
+                    <CardStyle>
+                        <TextCardStyle>Comprador</TextCardStyle>
                         <TextBoxStyle>Aqui você vai fazer pipipi popopo</TextBoxStyle>
                         <OvalButton>Pipipi popopo</OvalButton>
-                    </NumDataStyle>
+                    </CardStyle>
                 </BottomRStyle>
             </BottomHomeStyle>
         </HomeStyle>
@@ -59,6 +62,7 @@ const SiteTitleStyle = styled.div`
     font-weight: 700;
     vertical-align: middle;
     line-height: 100px; 
+    margin-top: 50px;
 `;
 
 const SiteSubTitleStyle = styled.div`
@@ -76,16 +80,16 @@ const BottomHomeStyle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #00ffa8;
+    background-color: #162327;
     width: 100%;
     height: 400px;
 `;
 
 const TextBoxStyle = styled.div`
     width: 60%;
-    height: 90%;
-    font-size: 20pt;
-    font-weight: 400;
+    height: 30%;
+    font-size: 12pt;
+    font-weight: 300;
     letter-spacing: 1pt;
     text-align: center;
     vertical-align: middle;
@@ -93,10 +97,9 @@ const TextBoxStyle = styled.div`
     color: #FFFFFF;
 `;
 
-const NumBoxStyle = styled.div`
+const TextCardStyle = styled.div`
     width: 60%;
-    height: 50%;
-    font-size: 24pt;
+    font-size: 20pt;
     font-weight: 700;
     letter-spacing: 1pt;
     text-align: center;
@@ -107,41 +110,49 @@ const NumBoxStyle = styled.div`
 `;
 
 const BottomLStyle = styled.div`
-    margin-left: 4%;
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    width: 35%;
 `;
 
 const BottomRStyle = styled.div`
-    margin-right: 2%;
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    width: 35%;
 `;
 
 const OvalButton = styled.button`
-    margin-bottom: 8%;
+    margin-bottom: 5%;
     border-radius: 30px;
-    width: 200px;
-    height: 50px;
-    background-colour: blue;
-    color: red;
-    font-size: 20px;
+    width: 70%;
+    height: 12%;
+    font-size: 12pt;
+    font-weight: 600;
+    background-color: #FFFFFF;
+    color: #328d98;
+    :hover {
+        color: #162327;
+        transition: 0.3s;
+        cursor: pointer;
+    }
 `;
 
-const NumDataStyle = styled.div`
+const CardStyle = styled.div`
     margin-top: 40px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     align-items: center;
     width: 90%;
-    height: 80%;
+    height: 70%;
     vertical-align: middle;
-    background-color: #328d98;
+    background-color: #1E3036;
     box-shadow: 7px 7px 7px #212121;
     border-radius: 40px;
-    border: 4px solid #212121;
+    border: 2px solid #FFFFFF;
     :hover {
         transform: translateY(-10px);
         transition: transform 600ms;
