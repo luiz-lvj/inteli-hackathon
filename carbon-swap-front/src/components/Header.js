@@ -11,12 +11,12 @@ const HeaderHome=(props) => {
         return (
             <Box>
                 {/* <LogoIMGStyle src={icon} alt="" /> */}
+                <img src="images/logoverde.jpg" alt="Logo da carbonswap"></img>
                 <LogoStyle onClick={() => history("/")}>carbonswap</LogoStyle>
                 <MenuStyle>
-                    <ButtonStyle onClick={() => history("/")}>Home</ButtonStyle>
-                    <ButtonStyle onClick={() => history("/")}>Market</ButtonStyle>
-                    <ButtonStyle onClick={() => history("/")}>Transfer</ButtonStyle>
-                    <ButtonStyle onClick={() => history("/")}>Aposentar</ButtonStyle>
+                    <ButtonStyle1 onClick={() => history("/")}>MARKET</ButtonStyle1>
+                    <ButtonStyle onClick={() => history("/")}>Conecte sua carteira</ButtonStyle>
+                    <ButtonStyle onClick={() => history("/")}>Traga seus Tokens</ButtonStyle>
                 </MenuStyle>
             </Box>
     );
@@ -87,7 +87,7 @@ const ConnectStyle = styled.button`
     position: fixed;
     left: 82%;
     margin-top: 10px;
-    height: 40px;
+    height: 50px;
     width: 16%;
     background-image: linear-gradient(60deg, #41FFB1, #3FBBFE);
     border-radius: 20px;
@@ -111,19 +111,50 @@ const ConnectStyle = styled.button`
 `;
 
 const ButtonStyle = styled.button`
+    white-space: nowrap;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24%;
-    height: 60px;
-    background: transparent;
-    border: 0px;
-    font-size: 14pt;
+    width: 35%;
+    height: 40px;
+    background: #328d98;
+    border: 50px;
+    border-radius: 500px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 60px;
     vertical-align: middle;
     color: #FFFFFF;
-    letter-spacing: 3pt;
+    letter-spacing: 1pt;
+    :hover {
+        color: #212121;
+        transition: 0.3s;
+        cursor: pointer;
+    } 
+    :focus {
+        background: #212121;
+        border: 0px;
+        transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+    } 
+`;
+
+const ButtonStyle1 = styled.button`
+    margin-top: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14%;
+    height: 45px;
+    background: transparent;
+    border: 50px;
+    border-radius: 500px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 60px;
+    vertical-align: middle;
+    color: #FFFFFF;
+    letter-spacing: 1pt;
     :hover {
         color: #212121;
         transition: 0.3s;
