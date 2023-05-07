@@ -4,11 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Send from './components/Send';
 import Search from './components/Search';
-<<<<<<< HEAD
 import './App.css'
-=======
 import Cbios from './components/Cbios';
->>>>>>> 5c88b9102255febf703fcd2080c0a7c6dd7e4948
 
 function App() {
   
