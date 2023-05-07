@@ -53,8 +53,8 @@ export default function Send() {
                             onChange={handleChange}                            
                         />
                         <InputText><u>Documento:</u></InputText>
-                        <InputStyle
-                            type="text"
+                        <InputFileStyle
+                            type="file"
                             onWheel={(e) => e.target.blur()}
                             placeholder="Documento"
                             name="documento"
@@ -169,6 +169,51 @@ const InputStyle = styled.input`
     ::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
+    }
+`;
+
+const InputFileStyle = styled.input`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    font-size: 14pt;
+    font-weight: 800px;
+    color: white;
+    text-indent: 40px;
+    letter-spacing: 1pt;
+    vertical-align: middle;
+    line-height: 10px;
+    background-color: #162327;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 40px;
+    outline: 0;
+    transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+    :hover {
+        background: #1E3036;
+        border: 1px solid #328d98;
+    } 
+    ::-webkit-input-placeholder {
+        font-size: 14pt;
+        color: #FFFFFF;
+        font-weight: 300;
+        opacity: 50%;
+    }
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    ::file-selector-button {
+        font-size: 14pt;
+        background: #1E3036;
+        color: white;
+        margin-top: 0.3em;
+        border: thin solid grey;
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
     }
 `;
 
