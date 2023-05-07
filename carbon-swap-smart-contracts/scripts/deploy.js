@@ -10,14 +10,17 @@ async function main() {
  
 
   const BioToken = await hre.ethers.getContractFactory("BioToken");
-  const bioToken = await BioToken.deploy("BioToken", "BIO", "0x0172ae13E3583BF565957095D27caede3Abb172e");
+  const bioToken = await BioToken.deploy("BioToken", "CBIO", "0x0172ae13E3583BF565957095D27caede3Abb172e");
   await bioToken.deployed();
 
   const RetiredBioToken = await hre.ethers.getContractFactory("RetiredBioToken");
-  const retiredBioToken = await RetiredBioToken.deploy("RetiredBioToken", "RBIO", bioToken.address);
+  const retiredBioToken = await RetiredBioToken.deploy("RetiredBioToken", "RCBIO", bioToken.address);
   await retiredBioToken.deployed();
 
   await bioToken.setRetiredBioToken(retiredBioToken.address);
+  console.log(bioToken.address);
+
+  console.log(await retiredBioToken.bioToken());
 
   const address = await bioToken.retiredBioToken();
   console.log(
@@ -30,25 +33,21 @@ async function main() {
   const b1 = hre.ethers.BigNumber.from("1000000000000000000000000");
   const b2 = hre.ethers.BigNumber.from("500000000000000000");
   
-  
-
-  const balanceRetire = await retiredBioToken.balanceOf("0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199");
+  const balanceRetire = await retiredBioToken.balanceOf("0xbA1B7FD1dAdD6000514b2Fc3156E8Ef2Ffd136bc");
   
   const balance = hre.ethers.utils.formatEther(balanceRetire)
 
   console.log(balanceRetire)
 
-  const tx = await bioToken.mint("0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199", b1);
+  const tx = await bioToken.mint("0xbA1B7FD1dAdD6000514b2Fc3156E8Ef2Ffd136bc", b1);
   await tx.wait()
 
-  const balance1 = await bioToken.balanceOf("0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199");
+  const balance1 = await bioToken.balanceOf("0xbA1B7FD1dAdD6000514b2Fc3156E8Ef2Ffd136bc");
   const balance1Format = hre.ethers.utils.formatEther(balance1)
   console.log(balance1Format)
   console.log(hre.ethers.utils.formatEther(b2))
 
-  await bioToken.retire( b2);
-
-  
+  await bioToken.retire( b2); 
 
 
   console.log(

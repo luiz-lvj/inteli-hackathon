@@ -7,6 +7,7 @@ import Search from './components/Search';
 import Company from './components/Companys';
 import './App.css'
 import Cbios from './components/Cbios';
+import TokenMarket from './components/TokenMarket';
 
 function App() {
   
@@ -19,6 +20,8 @@ function App() {
         <Route path="/market" exact element={<Search/>} />
         <Route path="/cbios" exact element={<Cbios/>} />
         <Route path="/company" exact element={<Company/>} />
+
+        <Route path="/test" exact element={<TokenMarket/>} />
       </Routes>
     </BrowserRouter>
   );

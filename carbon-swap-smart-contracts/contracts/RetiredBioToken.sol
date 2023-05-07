@@ -21,11 +21,11 @@ contract RetiredBioToken is ERC20{
         bioToken = BioToken(_bioToken);
     }
 
-    function transfer(address recipient, uint256 amount) public override returns (bool) {
+    function transfer(address recipient, uint256 amount) public pure override returns (bool) {
         revert("RetiredBioToken is not transferable");
     }
 
-    function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
+    function transferFrom(address sender, address recipient, uint256 amount) public pure override returns (bool) {
         revert("RetiredBioToken is not transferable");
     }
     
