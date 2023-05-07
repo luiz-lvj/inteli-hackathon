@@ -60,6 +60,30 @@ app.delete("/credits/:id", (req, res) => {
     });
 });
 
+app.get("/get-tokens", (req, res) => {
+  credit_model
+    .gettokens()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.post("/mint-tokens", (req, res) => {
+  const data = req.body;
+
+  if (!data) {
+    const error = new Error("Data is missing");
+    error.status = 400;
+    return next(error);
+  }
+  
+  console.log(data);
+  res.send(data);
+});
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });
