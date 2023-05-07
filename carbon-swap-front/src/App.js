@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Send from './components/Send';
 import Search from './components/Search';
+import Company from './components/Companys';
 import './App.css'
 import Cbios from './components/Cbios';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/send" exact element={<Send/>} />
         <Route path="/market" exact element={<Search/>} />
         <Route path="/cbios" exact element={<Cbios/>} />
+        <Route path="/company" exact element={<Company/>} />
       </Routes>
     </BrowserRouter>
   );

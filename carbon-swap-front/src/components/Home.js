@@ -24,7 +24,7 @@ export default function Home() {
           <div className="CardStyle">
             <div className="TextCardStyle">Empresa</div>
             <div className="TextBoxStyle">Aqui você vai fazer pipipi popopo</div>
-            <button className="OvalButton" onClick={() => history("/send")}>
+            <button className="OvalButton" onClick={() => history("/company")}>
               Pipipi popopo
             </button>
           </div>
