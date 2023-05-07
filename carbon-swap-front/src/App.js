@@ -4,6 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Send from './components/Send';
 import Search from './components/Search';
+<<<<<<< HEAD
+import './App.css'
+=======
+import Cbios from './components/Cbios';
+>>>>>>> 5c88b9102255febf703fcd2080c0a7c6dd7e4948
 
 function App() {
   
@@ -14,6 +19,7 @@ function App() {
         <Route path="/" exact element={<Home/>} />
         <Route path="/send" exact element={<Send/>} />
         <Route path="/market" exact element={<Search/>} />
+        <Route path="/cbios" exact element={<Cbios/>} />
       </Routes>
     </BrowserRouter>
   );
