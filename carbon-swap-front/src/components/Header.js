@@ -95,12 +95,13 @@ const ButtonStyle = styled.button`
     color: #FFFFFF;
     letter-spacing: 1pt;
     :hover {
-        color: #212121;
+        color: #162327;
         transition: 0.3s;
         cursor: pointer;
     } 
     :focus {
-        background: #212121;
+        background: #FFFFFF;
+        color: #328d98;
         border: 0px;
         transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
     } 

@@ -30,25 +30,29 @@ export default function Send() {
                 <BottomBoxStyle>
                     <SendButtonStyle>Conecte sua carteira</SendButtonStyle>
                     <MyForm>
-                        <InputText>Token:</InputText>
-                        <InputStyle
+                        <InputText><u>Token:</u></InputText>
+                        <SelectStyle
                             type="text"
                             onWheel={(e) => e.target.blur()}
                             placeholder="Token a ser transferido"
                             name="token"
                             value={inputs.token}
                             onChange={handleChange}
-                        />
-                        <InputText>Quantidade:</InputText>
+                        >
+                            <option value="BRA">cBios</option>
+                            <option value="USA">USA</option>
+                            <option value="EUR">EUR</option>
+                        </SelectStyle>
+                        <InputText><u>Quantidade:</u></InputText>
                         <InputStyle
-                            type="text"
+                            type="number"
                             onWheel={(e) => e.target.blur()}
                             placeholder="Quantidadade a ser transferida"
                             name="quantidade"
                             value={inputs.quantidade} 
                             onChange={handleChange}                            
                         />
-                        <InputText>Documento:</InputText>
+                        <InputText><u>Documento:</u></InputText>
                         <InputStyle
                             type="text"
                             onWheel={(e) => e.target.blur()}
@@ -57,7 +61,7 @@ export default function Send() {
                             value={inputs.documento} 
                             onChange={handleChange}
                         />
-                        <SendButtonSubmit type="submit">Enviar</SendButtonSubmit>
+                        <SendButtonSubmit type="submit">Enviar Tokens</SendButtonSubmit>
                     </MyForm>
                 </BottomBoxStyle>
             </BottomSendStyle>
@@ -81,42 +85,44 @@ const TopSendStyle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 30px;
+    height: 50px;
 `;
 
 const SiteTitleStyle = styled.div`
     display: flex;
     justify-content: center;
-    font-size: 32pt;
+    font-size: 28pt;
     letter-spacing: 1pt;
     color: #FFFFFF;
     font-weight: 500;
     vertical-align: middle;
     line-height: 100px; 
-    margin-top: 50px;
+    margin-top: 60px;
 `;
 
 const BottomSendStyle = styled.div`
     display: center;
     flex-direction: row;
     justify-content: space-between;
-    background-color: white;
+    background-color: #162327;
     width: 100%;
-    height: 500px;
+    height: 560px;
     margin-top: 100px;
 `;
 
 const BottomBoxStyle = styled.div`
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     align-items: center;
     width: 80%;
-    height: 80%;
+    height: 85%;
+    border-radius: 50px;
+    border: 3px solid white;
     vertical-align: middle;
     background-color: #1E3036;
 `;
@@ -133,32 +139,62 @@ const MyForm = styled.form`
 
 const InputStyle = styled.input`
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 80%;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 800px;
     color: white;
     text-indent: 40px;
     letter-spacing: 1pt;
     vertical-align: middle;
     line-height: 10px;
-    
-    background: linear-gradient(#2A2A2A, #2A2A2A) padding-box,
-                linear-gradient(60deg, #41FFB1, #3FBBFE) border-box;
-    border: 2px solid transparent;
+    background-color: #162327;
+    border: 1px solid white;
     border-radius: 30px;
-    height: 80px;
+    height: 40px;
     outline: 0;
     transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
     :hover {
-        background: linear-gradient(#2f2f2f, #2f2f2f) padding-box,
-                    linear-gradient(60deg, #41FFB1, #3FBBFE) border-box;
-        border: 2px solid transparent;
+        background: #1E3036;
+        border: 1px solid #328d98;
     } 
     ::-webkit-input-placeholder {
-        font-size: 20pt;
+        font-size: 14pt;
+        color: #FFFFFF;
+        font-weight: 300;
+        opacity: 50%;
+    }
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+`;
+
+const SelectStyle = styled.select`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    font-size: 14pt;
+    font-weight: 800px;
+    color: white;
+    text-indent: 40px;
+    letter-spacing: 1pt;
+    vertical-align: middle;
+    background-color: #162327;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 40px;
+    outline: 0;
+    transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+    :hover {
+        background: #1E3036;
+        border: 1px solid #328d98;
+    } 
+    ::-webkit-input-placeholder {
+        font-size: 14pt;
         color: #FFFFFF;
         font-weight: 300;
         opacity: 50%;
@@ -172,13 +208,14 @@ const InputStyle = styled.input`
 
 const InputText = styled.div`
     display: flex;
-    textAlign: left;
     font-size: 12pt;
     letter-spacing: 1pt;
     color: #FFFFFF;
+    width: 100px;
     font-weight: 500;
-    vertical-align: center;
-    line-height: 40px; 
+    margin-top: 10px;
+    margin-right: 65%;
+    line-height: 30px; 
 `;
 
 const SendButtonStyle = styled.button`
@@ -188,18 +225,19 @@ const SendButtonStyle = styled.button`
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    height: 45px;
-    background: #00DE92;
+    height: 40px;
+    background: #FFFFFF;
     border: 50px;
     border-radius: 500px;
-    font-size: 12pt;
-    font-weight: 600;
+    font-size: 14pt;
+    font-weight: 900;
     line-height: 40px;
     vertical-align: middle;
-    color: #FFFFFF;
+    color: #328d98;
     letter-spacing: 1pt;
+    margin-top: 20px;
     :hover {
-        color: #002E1E;
+        color: #162327;
         transition: 0.3s;
         cursor: pointer;
     } 
@@ -214,18 +252,19 @@ const SendButtonSubmit = styled.button`
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 45px;
-    background: #00DE92;
+    height: 40px;
+    background: #328d98;
     border: 50px;
     border-radius: 500px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 14pt;
+    font-weight: 900;
     line-height: 40px;
     vertical-align: middle;
     color: #FFFFFF;
     letter-spacing: 1pt;
+    margin-top: 20px;
     :hover {
-        color: #002E1E;
+        color: #162327;
         transition: 0.3s;
         cursor: pointer;
     } 
