@@ -6,11 +6,12 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="brand">
-        <img className="footerLogo" src={icon} />
+        <img className="footerLogo" src={icon} alt="Logo Carbon Swap"/>
         <h4>carbonswap</h4>
       </div>
       <div className="linksLogo">
-        <a href="https://taikai.network/inteliblockchain/hackathons/ibchallenge2023/projects/clhbxfh3c84406301xhkz3b0s2k/idea">
+        <a rel="noreferrer" target="_blank"
+        href="https://taikai.network/inteliblockchain/hackathons/ibchallenge2023/projects/clhbxfh3c84406301xhkz3b0s2k/idea">
           <svg
             width="80"
             height="25"
@@ -30,12 +31,12 @@ export default function Footer() {
             ></path>
           </svg>
         </a>
-        <a href="https://github.com/luiz-lvj/inteli-hackathon">
-          <img className="footerIcon" src={gitIcon} />
+        <a rel="noreferrer" target="_blank" href="https://github.com/luiz-lvj/inteli-hackathon">
+          <img className="footerIcon" src={gitIcon} alt="Git hub"/>
         </a>
       </div>
       <p className="copyright">
-        Copyright © 2023 All rights reserved. Powered by <b>olafinho</b>
+        Copyright © 2023 All rights reserved. Powered by <b>olafinho & Cia</b>
       </p>
     </div>
   );

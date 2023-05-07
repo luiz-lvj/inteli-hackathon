@@ -74,10 +74,10 @@ const SendStyle = styled.div`
     flex-direction: column;
     justify-content: space-between;
     background-image: url(${bkg});
-    height: 100%;
+    height: 100vh;
     background-size: 100%;
     align-items: center;
-    width: 100%;
+    width: 100vw;
 `;
 
 const TopSendStyle = styled.div`
@@ -85,7 +85,7 @@ const TopSendStyle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 50px;
+    height: 60px;
 `;
 
 const SiteTitleStyle = styled.div`
@@ -106,22 +106,22 @@ const BottomSendStyle = styled.div`
     justify-content: space-between;
     background-color: #162327;
     width: 100%;
-    height: 560px;
+    height: 100%;
     margin-top: 100px;
 `;
 
 const BottomBoxStyle = styled.div`
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     align-items: center;
     width: 80%;
-    height: 85%;
-    border-radius: 50px;
+    height: 90%;
+    border-radius: 60px;
     border: 3px solid white;
     vertical-align: middle;
     background-color: #1E3036;
@@ -134,7 +134,7 @@ const MyForm = styled.form`
     align-items: center;
     width: 100%;
     height: 80%;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
 `;
 
 const InputStyle = styled.input`

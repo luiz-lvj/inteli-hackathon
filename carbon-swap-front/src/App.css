@@ -22,7 +22,7 @@
 .parallax{
     background-size: 1600px;
     background-image: url(./images/background_v1.jpeg);
-    filter: blur(0.5);
+    filter: blur(2px);
     position: fixed;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@
 .SiteTitleStyle{
     font-size: 48pt;
     font-size: 6rem;
-    letter-spacing: 1.1pt;
+    letter-spacing: 6pt;
     color: #ffffff;
     font-weight: 700;
     vertical-align: middle;
@@ -47,13 +47,23 @@
 
 .SiteSubTitleStyle{
     display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 36pt;
   letter-spacing: 4pt;
-  width: 60%;
+  width: 65%;
   color: #ffffff;
   font-weight: 300;
   vertical-align: middle;
+  margin-right: 100px;
+}
+
+.SiteSubTitleStyle spam{
+    margin-left: 9px;
+    margin-right: 9px;
+    color: #328d98;
+    color: #13d166;
+    font-weight: 800;
+    font-size: 38pt;
 }
 
 .BottomHomeStyle{
@@ -62,24 +72,25 @@
     justify-content: space-evenly;
     background-color: #162327;
     width: 100%;
-    height: 80vh;
+    height: 50vh;
+    margin-bottom: 15vh;
 }
 
 .TextBoxStyle{
     width: 60%;
     height: 30%;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 300;
     letter-spacing: 1pt;
     text-align: center;
     vertical-align: middle;
-    line-height: 40px;
+    line-height: 30px;
     color: #ffffff;
 }
 
 .TextCardStyle{
     width: 60%;
-    font-size: 20pt;
+    font-size: 36pt;
     font-weight: 700;
     letter-spacing: 1pt;
     text-align: center;
@@ -93,21 +104,22 @@
     margin-bottom: 5%;
     border-radius: 30px;
     width: 70%;
-    height: 12%;
-    font-size: 12pt;
-    font-weight: 600;
+    height: 14%;
+    font-size: 14pt;
+    font-weight: 700;
     background-color: #ffffff;
     color: #162327;
 }
 
 .OvalButton:hover {
-  color: #328d98;
-  transition: 0.3s;
-  cursor: pointer;
+    color: #328d98;
+    background-color: #eafff3 ;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .CardStyle{
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -150,6 +162,8 @@
     align-items: center;
     height: 10vh;
     background: rgba(22, 35, 39, 0.8);
+    margin-top: auto;
+    width: 100%;
 }
 
 .brand{
@@ -164,8 +178,8 @@
 
 .brand h4{
     color: white;
-    font-size: 25pt;
-    font-weight: 300;
+    font-size: 20pt;
+    font-weight: 600;
 }
 
 .footer > a{
@@ -184,7 +198,8 @@
 }
 
 .footerLogo{
-    height: 48px;
+    height: 36px;
+    margin-right: 10px;
 }
 
 .footerIcon{
@@ -217,6 +232,7 @@
 .TopSearchStyle{
     /* background-image: url(${bkg}); */
     background-image: url("./images/background_v1.jpeg");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -225,10 +241,10 @@
 }
 
 .SiteTitleStyleSearch{
-    font-size: 28pt;
+    font-size: 30pt;
     letter-spacing: 1pt;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 600;
     vertical-align: middle;
     line-height: 100px;
     margin-top: 7.5vh;
@@ -237,9 +253,10 @@
 .BottomSearchStyle{
     display: flex;
     justify-content: space-evenly;
-    align-items: start;
+    align-items: flex-start;
     height: 100%;
     padding-top: 5vh;
+    width: 100%;
 }
 
 .cardSearch{
@@ -248,7 +265,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 30%;
+    width: 26.5%;
     height: 85%;
     vertical-align: middle;
     background-color: #1E3036;
@@ -309,4 +326,23 @@
   vertical-align: middle;
   line-height: 40px;
   color: #ffffff;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: #3f9464;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #07652f;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #00461e;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import Header from "./Header";
 import Footer from "./Footer"
-import bkg from "../images/background_v1.jpeg";
+// import bkg from "../images/background_v1.jpeg";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
@@ -16,24 +16,24 @@ export default function Home() {
         <h1 className="SiteTitleStyle">Carbon Swap</h1>
         <br></br>
         <h3 className="SiteSubTitleStyle">
-          Aqui vai uma mensagem bem legal para vocês compradores
+          The future of  <spam> Green </spam>  assets
         </h3>
       </div>
       <div className="BottomHomeStyle">
         {/* <BottomLStyle> */}
           <div className="CardStyle">
             <div className="TextCardStyle">Empresa</div>
-            <div className="TextBoxStyle">Aqui você vai fazer pipipi popopo</div>
+            <div className="TextBoxStyle">Aqui você pode encontrar diversas empresas</div>
             <button className="OvalButton" onClick={() => history("/company")}>
-              Pipipi popopo
+              Descobrir Empresas
             </button>
           </div>
         {/* </BottomLStyle> */}
         {/* <BottomRStyle> */}
           <div className="CardStyle">
             <div className="TextCardStyle">Comprador</div>
-            <div className="TextBoxStyle">Aqui você vai fazer pipipi popopo</div>
-            <button className="OvalButton">Pipipi popopo</button>
+            <div className="TextBoxStyle">Descubra diversos compradores</div>
+            <button className="OvalButton">Saiba Mais </button>
           </div>
         {/* </BottomRStyle> */}
       </div>
