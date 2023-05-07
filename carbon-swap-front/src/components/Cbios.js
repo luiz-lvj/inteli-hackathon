@@ -30,10 +30,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function createData(
-    bid: number,
-    bid_size: number,
-    ask: number,
-    ask_size: number,
+    bid,
+    bid_size,
+    ask,
+    ask_size,
   ) {
     return { bid, bid_size, ask, ask_size };
   }
