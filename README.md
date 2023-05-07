@@ -12,6 +12,22 @@
 * Thiago Galante Pereira
 ## Solução
 O projeto visa solucionar a dificuldade na transação dos tokens de carbono ao redor do mundo a partir da implementação da blockchain nesse mercado. Para isso, a CarbonSwap será essencial, pois ela é uma exchange focada no mercado regulado que integra os diferentes tokens de carbono existentes no mundo e baseia suas negociações na stablecoin BTG Dol. Com isso, ela garante a interoperabilidade, a segurança e a eficiência desse mercado.
+
+Sobre as tecnologias utilizadas:
+
+GEAP:
+
+Interoperabilidade como requisito é atingida, afinal, os tokens da "Bolsa Verde" brasileira podem ser negociados em um espaço com o LCFS (dos EUA) e o ETS (da Europa);
+Essa negociação ocorre via stablecoin BTG Dol, o que garante rapidez e estabilidade na transação, diferente do método Swift tradicional, que pode levar alguns dias em transações no exterior;
+Garantia de aposentadoria dos créditos de carbono, por meio de um mint de um token de aposentadoria intransferível por meio de um burn no token aposentado, assegurando que não seja negociado mais.
+Por fim, projeto visando à melhoria da "Bolsa Verde" existe por meio desses benefícios desbloqueados com smart contracts.
+
+Mynt:
+
+Stablecoin do BTG Dol é usada em um mercado em muita ascensão, de Crédito de Carbono, e coin pode ser primordial dentro desse meio, sendo mais utilizada;
+Projeto visa justamente à melhoria que hoje a moeda tradicional não traz, por IERC20, a stablecoin pode ser integrada em meio a garantir a estabilidade em nosso projeto.
+Por fim, usamos o BTG Dol com muito êxito.
+
 ## Instruções para rodar o projeto
 * Rodar "npm install" e, em seguida, o "npm start" dentro do diretório do front-end e do diretório do back-end.
 * Rodar "npx hardhat run ./script/deploy/gs" nos smart contracts.
