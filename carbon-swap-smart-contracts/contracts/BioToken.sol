@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./RetiredBioToken.sol";
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 contract BioToken is ERC20, ERC20Burnable, Ownable {
     //variables
@@ -45,8 +45,8 @@ contract BioToken is ERC20, ERC20Burnable, Ownable {
     }
 
     function retire(uint256 _amount) public {
-        console.log(_amount);
-        console.log(balanceOf(msg.sender));
+        // console.log(_amount);
+        // console.log(balanceOf(msg.sender));
         burn(_amount);
         retiredBioToken.mint(msg.sender, _amount);
         emit Retirement(msg.sender,  address(retiredBioToken), _amount);
@@ -90,7 +90,6 @@ contract BioToken is ERC20, ERC20Burnable, Ownable {
             );
             uint256 amount = price * quantity;
             require(recovered != address(0) && recovered == owner, "ERC20Permit: invalid signature");
-            require(IERC20(paymentToken).balanceOf(msg.sender) >= amount, "ERC20Permit: insufficient balance");
             
             IERC20(paymentToken).transferFrom(msg.sender, owner, amount);
             _transfer(owner, msg.sender, quantity);
