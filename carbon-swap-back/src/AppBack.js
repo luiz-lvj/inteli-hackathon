@@ -67,11 +67,12 @@ function App() {
         return response.text();
       })
       .then((data) => {
-        alert(data);
+        //alert(data);
         getCredit();
       });
   }
 
+  //delete test (fiz pela resenha)
   function deleteCredit() {
     let id = parseInt(prompt("Enter credit id"));
     fetch(`http://localhost:3001/credits/${id}`, {
@@ -86,56 +87,58 @@ function App() {
       });
   }
 
-  function getSellOrder() {
-    let sellAddress = prompt("Enter Credit Address");
-    fetch(`http://localhost:3001/get-sell-order/${sellAddress}`, {})
-      .then((response) => {
-        return response.text();
-      })
-      .then((data) => {
-        console.log(JSON.parse(data));
-        alert(data);
-      });
+  //busca todos os creditsaddress com mesmo valor
+  async function getSellOrder() {
+    try {
+      const sellAddress = prompt("Enter Credit Address");
+      const response = await fetch(`http://localhost:3001/get-sell-order/${sellAddress}`, {});
+      const data = await response.json();
+      console.log(data);
+      alert(JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+    }
   }
-
-  function getTokens() {
-    fetch("http://localhost:3001/get-tokens")
-      .then((response) => {
-        return response.text();
-      })
-      .then((data) => {
-        //setTokens(JSON.parse(data));
-        setTokens(data);
-      });
+  
+  //ler dados do db da tabela tokens
+  async function getTokens() {
+    try {
+      const response = await fetch("http://localhost:3001/get-tokens");
+      const data = await response.json();
+      //setTokens(data);
+      setTokens(JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+    }
   }
+  
+  //post simples envolvendo token (sem db)
+  async function mintTokens() {
+    try {
+      //devo fazer o validador quando integrado ao front
+      const tokenAddress = prompt("Enter token address");
+      const address = prompt("Enter address");
+      const quantity = prompt("Enter quantity");
 
-  function mintTokens() {
-    let tokenAddress = prompt("Enter token address");
-    let address = prompt("Enter address");
-    let quantity = prompt("Enter quantity");
-
-    fetch("http://localhost:3001/mint-tokens", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        address: address,
-        tokenAddress: tokenAddress,
-        quantity: quantity,
-      }),
-    })
-      .then((response) => {
-        return response.text();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
+      const response = await fetch("http://localhost:3001/mint-tokens", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          address,
+          tokenAddress,
+          quantity,
+        }),
       });
+      const data = await response.text();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   }
-
+  
+  //meramente ilustrativo
   return (
     <div>
       {credits ? credits : "There is no credit data available"}
