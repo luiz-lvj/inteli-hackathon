@@ -13,7 +13,7 @@ const HeaderHome=(props) => {
                 <LogoIMGStyle src={icon} alt="" />
                 <LogoStyle onClick={() => history("/")}>carbonswap</LogoStyle>
                 <MenuStyle>
-                    <ButtonStyle1 onClick={() => history("/")}>MARKET</ButtonStyle1>
+                    <ButtonStyle1 onClick={() => history("/market")}>MARKET</ButtonStyle1>
                     <ButtonStyle onClick={() => history("/")}>Conecte sua carteira</ButtonStyle>
                     <ButtonStyle onClick={() => history("/send")}>Traga seus Tokens</ButtonStyle>
                 </MenuStyle>
